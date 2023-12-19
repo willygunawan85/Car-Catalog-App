@@ -58,5 +58,17 @@ List<Map> cars = [
     'carPrice': 500000000,
     'isRotated': true,
     'carRating': '4.9',
+  }, // car 5 end
+  // car 5 start
+  {
+    'carName': 'Hiace',
+    'carClass': 'Family',
+    'carPower': 200,
+    'people': '1-8',
+    'bags': '1-4',
+    'carImage': 'assets/hiace_car.png',
+    'carPrice': 500000000,
+    'isRotated': true,
+    'carRating': '4.9',
   } // car 5 end
 ];
