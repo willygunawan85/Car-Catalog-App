@@ -1,3 +1,4 @@
+import 'package:car_app_ui/model/logo_model.dart';
 import 'package:car_app_ui/screens/card_screen.dart';
 import 'package:car_app_ui/screens/logo_screen.dart';
 import 'package:flutter/material.dart';
@@ -189,13 +190,20 @@ Row buildCategory(String text, size, ThemeData themeData) => Row(
     );
 
 // build item for top brands category (Hyndai, golf, ...)
-Padding buildBrandLogo(Widget image, Size size, ThemeData themeData) => Padding(
+Padding buildBrandLogo(int i, Widget image, Size size, ThemeData themeData) =>
+    Padding(
       padding: EdgeInsets.symmetric(
         horizontal: size.width * 0.03,
       ),
       child: InkWell(
         onTap: () {
-          Get.to(LogoPage());
+          Get.to(LogoPage(
+            logoName: logo[i]['logoName'],
+            logoImage: logo[i]['logoImage'],
+            carPrice: logo[i]['carPrice'],
+            carRating: logo[i]['carRating'],
+            isRotated: logo[i]['isRotated'],
+          ));
         },
         child: SizedBox(
           height: size.width * 0.18,
@@ -223,6 +231,7 @@ Column buildTopBrands(Size size, ThemeData themeData) => Column(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               buildBrandLogo(
+                0,
                 Image.asset(
                   'assets/hyundai_logo.png',
                   height: size.width * 0.1,
@@ -233,6 +242,7 @@ Column buildTopBrands(Size size, ThemeData themeData) => Column(
                 themeData,
               ),
               buildBrandLogo(
+                1,
                 Image.asset(
                   'assets/volkswagen_logo.png',
                   height: size.width * 0.12,
@@ -243,6 +253,7 @@ Column buildTopBrands(Size size, ThemeData themeData) => Column(
                 themeData,
               ),
               buildBrandLogo(
+                2,
                 Image.asset(
                   'assets/toyota_logo.png',
                   height: size.width * 0.08,
@@ -253,6 +264,7 @@ Column buildTopBrands(Size size, ThemeData themeData) => Column(
                 themeData,
               ),
               buildBrandLogo(
+                3,
                 Image.asset(
                   'assets/bmw_logo.png',
                   height: size.width * 0.12,

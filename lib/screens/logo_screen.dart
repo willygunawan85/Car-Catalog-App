@@ -7,26 +7,24 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:unicons/unicons.dart';
 
 class LogoPage extends StatefulWidget {
-  String? carImage;
-  String? carClass;
-  String? carName;
+  String? logoImage;
+  String? logoName;
   int? carPrice;
   String? carRating;
   bool? isRotated;
 
   LogoPage(
-      {this.carImage,
-      this.carClass,
-      this.carName,
+      {this.logoImage,
+      this.logoName,
       this.carPrice,
       this.carRating,
       this.isRotated});
 
   @override
-  State<LogoPage> createState() => _CardPageState();
+  State<LogoPage> createState() => _LogoPageState();
 }
 
-class _CardPageState extends State<LogoPage> {
+class _LogoPageState extends State<LogoPage> {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size; //check the size of device
@@ -91,7 +89,7 @@ class _CardPageState extends State<LogoPage> {
                     children: [
                       widget.isRotated!
                           ? Image.asset(
-                              widget.carImage!,
+                              widget.logoImage!,
                               height: size.width * 0.5,
                               width: size.width * 0.8,
                               fit: BoxFit.contain,
@@ -100,7 +98,7 @@ class _CardPageState extends State<LogoPage> {
                               alignment: Alignment.center,
                               transform: Matrix4.rotationY(pi),
                               child: Image.asset(
-                                widget.carImage!,
+                                widget.logoImage!,
                                 height: size.width * 0.5,
                                 width: size.width * 0.8,
                                 fit: BoxFit.contain,
@@ -110,15 +108,6 @@ class _CardPageState extends State<LogoPage> {
                         mainAxisAlignment: MainAxisAlignment.start,
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Text(
-                            widget.carClass!,
-                            textAlign: TextAlign.center,
-                            style: GoogleFonts.poppins(
-                              color: Colors.white,
-                              fontSize: size.width * 0.04,
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
                           const Spacer(),
                           Row(
                             crossAxisAlignment: CrossAxisAlignment.center,
@@ -148,7 +137,7 @@ class _CardPageState extends State<LogoPage> {
                       Row(
                         children: [
                           Text(
-                            widget.carName!,
+                            widget.logoName!,
                             textAlign: TextAlign.left,
                             style: GoogleFonts.poppins(
                               color: Colors.white,
